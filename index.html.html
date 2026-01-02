@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>釜山三天兩夜：超詳盡攻略手冊</title>
+    <style>
+        :root {
+            --primary: #007bff; /* 藍色主調 */
+            --secondary: #6c757d;
+            --accent: #ffc107; /* 黃色強調 */
+            --bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --text: #2d3436;
+            --taxi-bg: #e3f2fd;
+            --taxi-text: #0d47a1;
+            --tip-bg: #fff3cd;
+            --tip-text: #856404;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 10px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 22px; font-weight: 700; }
+        .header p { margin: 8px 0 0; font-size: 0.9em; opacity: 0.95; }
+        
+        /* Info Bar */
+        .info-bar {
+            background: #dfe6e9;
+            padding: 12px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #2d3436;
+            font-weight: 600;
+            border-bottom: 1px solid #b2bec3;
+        }
+
+        /* Day Section */
+        .day-section { padding: 10px 20px 30px; }
+        .day-header {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .day-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9em;
+            margin-right: 12px;
+        }
+        .day-title { font-weight: 700; font-size: 1.1em; color: #2d3436; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 10px; }
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            border-left: 3px solid #dfe6e9;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+        .time {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.95em;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+        .activity {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .details {
+            font-size: 0.95em;
+            color: #636e72;
+            margin-bottom: 8px;
+        }
+        .details ul {
+            padding-left: 18px;
+            margin: 5px 0;
+        }
+        .details li { margin-bottom: 4px; }
+
+        /* Custom Boxes */
+        .transport-box {
+            background-color: var(--taxi-bg);
+            color: var(--taxi-text);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            margin-top: 8px;
+            border-left: 4px solid #1976d2;
+        }
+        .transport-box strong { display: block; margin-bottom: 2px; }
+        
+        .tip-box {
+            background-color: var(--tip-bg);
+            color: var(--tip-text);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            margin-top: 8px;
+            border: 1px dashed #e6dbb9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+        .footer h3 { margin-top: 0; color: white; border-bottom: 1px solid #636e72; padding-bottom: 10px;}
+        .footer ul { padding-left: 20px; }
+        .footer li { margin-bottom: 8px; }
+
+        /* Utilities */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .tag-red { background-color: #ff7675; color: white; }
+        .tag-green { background-color: #55efc4; color: #006266; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🇰🇷 釜山三天兩夜精實攻略</h1>
+        <p>1/10 (五) - 1/12 (日) | 吃貨與美照之旅</p>
+    </div>
+    <div class="info-bar">
+        🏨 住宿：Seomyeon Denbasta Central Hotel (西面)<br>
+        🚕 交通策略：三人分攤計程車最划算
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <span class="day-badge">Day 1</span>
+            <span class="day-title">1/10 (五) 西面落地 & 南浦洞</span>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">06:10 - 08:30</div>
+                <div class="activity">🛬 抵達 & 寄放行李</div>
+                <div class="details">
+                    入境後直接去計程車招呼站。到飯店先寄放行李 (還不能進房)。
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>機場 → 西面飯店</strong><br>
+                    車程：約 30-40 分鐘<br>
+                    車資：約 ₩18,000 - 22,000
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">09:00 - 10:30</div>
+                <div class="activity">🥣 早餐 & 換錢</div>
+                <div class="details">
+                    <ul>
+                        <li><strong>早餐：松亭3代豬肉湯飯</strong> (湯本身不鹹，記得加桌上鹹蝦醬調味)。</li>
+                        <li><strong>換錢：西面老奶奶換錢所</strong> (巷弄內，請準備台幣/美金)。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">11:00 - 13:00</div>
+                <div class="activity">📸 甘川洞文化村 <span class="tag tag-green">必拍</span></div>
+                <div class="details">
+                    找「小王子」拍照。入口處遊客中心可買地圖。
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>西面 → 甘川洞「入口」</strong><br>
+                    攻略：請司機停在「甘川小學對面」，不要從山下走上來。<br>
+                    車資：約 ₩10,000 - 12,000
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">13:30 - 16:30</div>
+                <div class="activity">🛍️ 南浦洞 / BIFF / 樂天百貨</div>
+                <div class="details">
+                    <ul>
+                        <li>午餐：BIFF廣場吃黑糖餅、魚板等街頭小吃。</li>
+                        <li><strong>樂天百貨光復店</strong>：直衝頂樓 RF 觀景台 (免費)，看影島大橋全景。</li>
+                    </ul>
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>甘川洞 → 南浦洞</strong> (約15分 / ₩7,000)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">18:30 - 20:30</div>
+                <div class="activity">🥩 晚餐：老宅邸 燒肉 (Old Mansion)</div>
+                <div class="details">
+                    西面老屋改建的氛圍烤肉店。如果排太久可改吃「味贊王」或「河南豬肉」。
+                </div>
+                <div class="tip-box">
+                    💡 吃完可逛西面地下街，或去 Standard Bread 吃甜點。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <span class="day-badge">Day 2</span>
+            <span class="day-title">1/11 (六) 東釜山海岸全覽</span>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">09:00 (準時)</div>
+                <div class="activity">🚀 出發前往機張 Luge</div>
+                <div class="details">
+                    <strong>絕對不能遲到！</strong>週六車多，為了搶第一批入場必須早走。
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>西面 → Skyline Luge</strong><br>
+                    車程：約 40-50 分鐘<br>
+                    車資：約 ₩25,000 - 30,000 (三人分攤划算)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">10:00 - 11:30</div>
+                <div class="activity">🏎️ Skyline Luge 斜坡滑車</div>
+                <div class="details">
+                    <ul>
+                        <li>建議先上網買票 (Klook/KKday) 掃碼入場。</li>
+                        <li>推薦買 2-3 次券，第一次滑簡易賽道，第二次衝刺。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">11:30 - 13:30</div>
+                <div class="activity">🍽️ 樂天 Premium Outlet (午餐)</div>
+                <div class="details">
+                    就在 Luge 對面。3F 美食街吃午餐，順便逛 Nike/Adidas (常有折扣)。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">14:00 - 16:10</div>
+                <div class="activity">☕ 青沙浦 (Cheongsapo) <span class="tag tag-green">重點</span></div>
+                <div class="details">
+                    <ul>
+                        <li><strong>灌籃高手平交道</strong>：列車經過時必拍 (注意安全)。</li>
+                        <li><strong>下午茶</strong>：Diart Coffee (Kaymak麵包) 或 Alice Donut。</li>
+                        <li><strong>天空步道</strong>：如果有時間可去踏石展望台。</li>
+                    </ul>
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>Outlet → 青沙浦</strong> (約15分 / ₩9,000)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">16:10 (集合)</div>
+                <div class="activity">🚉 天空膠囊列車 <span class="tag tag-red">預約 16:30</span></div>
+                <div class="details">
+                    <strong>請提早20分鐘到青沙浦站 2F 報到。</strong><br>
+                    路線：青沙浦 → 尾浦 (夕陽時段，車程30分)。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">17:30 - 20:00</div>
+                <div class="activity">🛍️ 新世界百貨 Centum City</div>
+                <div class="details">
+                    從尾浦搭計程車去 (約15分)。<br>
+                    <strong>注意：百貨 20:30 打烊。</strong><br>
+                    重點：Gentle Monster (1F)、B1 甜點伴手禮 (Bada Sand)、免稅店。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">20:30</div>
+                <div class="activity">🥩 晚餐：味贊王鹽烤肉 (西面店)</div>
+                <div class="details">
+                    逛完百貨直接搭車回西面吃，避開海雲台排隊地獄，吃完直接回飯店。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header">
+            <span class="day-badge">Day 3</span>
+            <span class="day-title">1/12 (日) 廣安里 & 返家</span>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">10:00</div>
+                <div class="activity">🏨 退房 (行李寄放櫃台)</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">10:40 (到店)</div>
+                <div class="activity">🍜 午餐：Nasari Sigdang <span class="tag tag-red">排隊店</span></div>
+                <div class="details">
+                    廣安里超人氣海景麵店。<br>
+                    <strong>攻略</strong>：11:00 開門，建議 10:40 先去排隊/登記，搶第一輪窗邊位。<br>
+                    必點：海鮮刀削麵、海鮮蔥餅。
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>西面 → 廣安里</strong> (約20分 / ₩10,000)
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">12:30 - 14:30</div>
+                <div class="activity">🌊 廣安里海邊 & 咖啡</div>
+                <div class="details">
+                    散步拍廣安大橋。<br>
+                    咖啡廳：All Sunday (貝果)、Cafe come and see me。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">15:00 - 18:00</div>
+                <div class="activity">🎁 最後補貨 (西面/田浦)</div>
+                <div class="details">
+                    NC百貨 (便宜鞋衣)、Olive Young (美妝)、Object (文創小物)。<br>
+                    晚餐可簡單吃飯捲或炸雞。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">18:30</div>
+                <div class="activity">🚕 前往機場</div>
+                <div class="details">
+                    回飯店拿行李，整理戰利品。<br>
+                    週日晚上車多，請預留 45 分鐘車程。
+                </div>
+                <div class="transport-box">
+                    🚕 <strong>西面 → 金海機場</strong><br>
+                    預算：₩20,000 左右
+                </div>
+            </div>
+             <div class="timeline-item">
+                <div class="time">22:00</div>
+                <div class="activity">✈️ 飛機起飛</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3>💡 旅伴請注意</h3>
+        <ul>
+            <li><strong>穿搭</strong>：洋蔥式穿法！室內很熱，室外海風超大 (0-5度)。必備圍巾、好走的鞋。</li>
+            <li><strong>電壓</strong>：220V 兩孔圓形插座 (豬鼻子)，記得帶轉接頭。</li>
+            <li><strong>交通</strong>：全程計程車為主，請準備韓元現金或 WOWPASS。</li>
+            <li><strong>導航</strong>：Google Maps 僅供參考，找路請看 Naver Map。</li>
+        </ul>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.8em; opacity: 0.7;">Have a nice trip to Busan! 🇰🇷</p>
+    </div>
+</div>
+
+</body>
+</html>
